@@ -1,12 +1,16 @@
 import React from "react";
-import BackArrow from "../../components/common/BackArrow";
-import { Container, ForgetPassword, Input, InputContainer, Logo } from "./styled";
+import BackArrow from "../../components/common/BackIcon";
+import { Bold, CompanyLogo, Container, ForgetPassword, Input, InputContainer, Logo, RegisterText } from "./styled";
 import DefaultButton from "../../components/common/DefaultButton";
 import { Alert } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { PropsStack } from "../../routes";
 
 const logo = require("../../../assets/images/logo.png");
+const companyLogo = require("../../../assets/images/logo-obc.png");
 
 const Login = () => {
+    const navigation = useNavigation<PropsStack>();
     const handleLogin = () => {
         Alert.alert('botao de login');
     }
@@ -33,6 +37,12 @@ const Login = () => {
                 buttonHandle={() => {
                     handleLogin();
                 }} />
+            <RegisterText onPress={() => {
+                navigation.navigate("Register");
+            }}>
+                Você ainda não tem conta? <Bold>Registre-se aqui!</Bold>
+            </RegisterText>
+            <CompanyLogo source={companyLogo} />
         </Container>
     );
 };

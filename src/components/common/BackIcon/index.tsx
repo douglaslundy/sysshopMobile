@@ -9,7 +9,7 @@ type props = {
 
 const back = require("../../../../assets/icons/arrow-left.png");
 
-const BackArrow = ({ marginLeft }: props) => {
+const BackIcon = ({ marginLeft }: props) => {
   const navigation = useNavigation<PropsStack>();
 
   const handleBack = () => {
@@ -30,4 +30,4 @@ const BackArrow = ({ marginLeft }: props) => {
   );
 };
 
-export default BackArrow;
+export default BackIcon;

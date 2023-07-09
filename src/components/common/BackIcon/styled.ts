@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-type backProps = {
+type BackIcon = {
   marginLeft: number;
 }
 
@@ -8,7 +8,7 @@ export const BackContainer = styled.TouchableOpacity``;
 
 export const Back = styled.Image.attrs({
   resizeMode: "contain",
-})<backProps>`
+})<BackIcon>`
   width: 40px;
   margin-left: ${(props) => props.marginLeft}px;
 `;
