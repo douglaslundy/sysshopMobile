@@ -16,16 +16,16 @@ const Login = () => {
     }
     return (
         <Container>
-            <BackArrow marginLeft={30} />
+            <BackArrow marginLeft={20} />
             <Logo source={logo} />
             <InputContainer>
                 <Input placeholder="Email"
-                    placeholderTextColor="white" />
+                    placeholderTextColor="#c0c0c1" />
             </InputContainer>
 
             <InputContainer>
                 <Input placeholder="Senha"
-                    placeholderTextColor="white"
+                    placeholderTextColor="#c0c0c1"
                     secureTextEntry={true} />
             </InputContainer>
             <ForgetPassword>Esqueceu sua senha</ForgetPassword>
