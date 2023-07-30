@@ -1,26 +1,8 @@
 import React, { Component } from 'react'
-import {
-    Container,
-    InfoLikeContainer,
-    LikeButton,
-    LikeIcon,
-    ProductImage,
-    ProductInfoContainer,
-    ProductPrice,
-    ProductPriceTitleContainer,
-    ProductTitle,
-    PublishText,
-    SellerInfoContainer,
-    SellerName
-}
-    from './styled'
 import { FlatList, ListRenderItem } from 'react-native';
-import { Alert } from 'react-native';
+import ProductCard from './ProductCard';
 
-const like = require("../../../../assets/icons/like.png");
-const liked = require("../../../../assets/icons/liked.png");
-
-interface ProductType {
+export interface ProductType {
     _id: string;
     productImage: string;
     price: string;
@@ -38,7 +20,7 @@ const Data = [
         price: "2600",
         name: "Playstation 4 Pro, seminovo",
         publishedData: "14/02/23",
-        SellerName: "Lucas Queiroga",
+        sellerName: "Lucas Queiroga",
         liked: false,
     },
     {
@@ -48,7 +30,7 @@ const Data = [
         price: "3600",
         name: "Playstation 4 Pro, seminovo",
         publishedData: "14/02/23",
-        SellerName: "Lucas Queiroga",
+        sellerName: "Lucas Queiroga",
         liked: true,
     },
     {
@@ -58,7 +40,7 @@ const Data = [
         price: "3600",
         name: "Playstation 4 Pro, seminovo",
         publishedData: "14/02/23",
-        SellerName: "Lucas Queiroga",
+        sellerName: "Lucas Queiroga",
         liked: false,
     },
     {
@@ -68,7 +50,7 @@ const Data = [
         price: "3600",
         name: "Playstation 4 Pro, seminovo",
         publishedData: "14/02/23",
-        SellerName: "Lucas Queiroga",
+        sellerName: "Lucas Queiroga",
         liked: true,
     },
     {
@@ -78,51 +60,15 @@ const Data = [
         price: "3600",
         name: "Playstation 4 Pro, seminovo",
         publishedData: "14/02/23",
-        SellerName: "Lucas Queiroga",
+        sellerName: "Lucas Queiroga",
         liked: false,
     },
 ];
 
 const ProductList = () => {
 
-    const Item = ({ data }: { data: ProductType }) => (
-        <Container activeOpacity={0.85}onPress={() => {
-            Alert.alert('Você clikou em produto')
-        }}>
-            <ProductImage
-                source={{
-                    uri: data.productImage,
-                }}
-            />
-            <ProductInfoContainer>
-                <ProductPriceTitleContainer>
-                    <ProductPrice>R$ {data.price}</ProductPrice>
-                    <ProductTitle numberOfLines={2}>{data.name}</ProductTitle>
-                </ProductPriceTitleContainer>
-                <InfoLikeContainer>
-                    <SellerInfoContainer>
-                        <PublishText>Publicado em {data.publishedData} por:</PublishText>
-                        <SellerName>{data.sellerName}</SellerName>
-                    </SellerInfoContainer>
-                    {!data.liked ? (
-                        <LikeButton onPress={() => {
-                            Alert.alert('Você deu Like')
-                        }}>
-                            <LikeIcon source={like} />
-                        </LikeButton>
-                    ) : (
-                        <LikeButton>
-                            <LikeIcon source={liked} />
-                        </LikeButton>
-                    )}
-                </InfoLikeContainer>
-            </ProductInfoContainer>
-        </Container>
-
-    );
-
     const renderItem: ListRenderItem<ProductType> = ({ item }) => (
-        <Item data={item} />
+        <ProductCard data={item} />
     );
 
     return (
