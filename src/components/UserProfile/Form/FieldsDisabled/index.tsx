@@ -23,4 +23,4 @@ const FieldsDisabled = () => {
   )
 }
 
-export default FieldsDisabled
+export default FieldsDisabled;
