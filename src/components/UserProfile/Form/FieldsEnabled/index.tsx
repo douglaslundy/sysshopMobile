@@ -1,10 +1,13 @@
 import { View, Text, Alert } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { InputContainer } from '../styled';
 import { AddresText, Input } from './styled';
 import DefaultButton from '../../../common/DefaultButton';
+import DropDownComponent from '../../../common/DropDownComponent';
 
 const FieldsEnabled = () => {
+    const [select, setSelect] = useState("");
+    const Data = [{ value: "Endereço 1", disabled: true }]
     return (
         <>
             <InputContainer>
@@ -16,9 +19,13 @@ const FieldsEnabled = () => {
             <InputContainer>
                 <Input value='(35) 98429-7193' />
             </InputContainer>
-            <InputContainer>
-                <Input value='DropDown' />
-            </InputContainer>
+
+            <DropDownComponent
+                data={Data}
+                placeholder='Seus endereços'
+                setSelected={setSelect}
+            />
+
             <InputContainer>
                 <Input placeholder='Senha'
                     placeholderTextColor="#c0c0c1"
@@ -44,9 +51,9 @@ const FieldsEnabled = () => {
 
             <DefaultButton
                 buttonText='Salvar Alterações'
-                buttonHandle={() => {Alert.alert('Opções alteradas com sucerro')} }
+                buttonHandle={() => { Alert.alert('Opções alteradas com sucerro') }}
                 buttonType='primary'
-                marginVertical={ 10}
+                marginVertical={10}
             />
 
         </>
