@@ -1,7 +1,7 @@
 import { SelectList } from "react-native-dropdown-select-list";
 import styled from "styled-components/native";
 
-export const DropDownConainer = styled.View`
+export const DropDownContainer = styled.View`
     width: 90%;
     margin: 10px auto;
 `;

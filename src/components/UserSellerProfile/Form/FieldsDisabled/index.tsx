@@ -1,23 +1,9 @@
 import React from 'react'
-import { InputDisabled, PlaceholderDisabled } from './styled'
-import DropDownComponent from '../../../common/DropDownComponent'
+import { ArrowIconDisabled, DropDownDisabled, DropDownDisabledContainer, InputDisabled, PlaceholderDisabled } from './styled'
+
+const arrowIcon = require("../../../../../assets/icons/arrow-down.png")
 
 const FieldsDisabled = () => {
-
-  const Data = [
-    {
-        value: "Teste 1",
-    },
-    {
-        value: "Teste 2",
-    },
-    {
-        value: "Teste 3",
-    },
-    {
-        value: "Teste 4",
-    },
-];
 
   return (
     <>
@@ -30,7 +16,14 @@ const FieldsDisabled = () => {
       <InputDisabled>
         <PlaceholderDisabled>(35) 98429-7193</PlaceholderDisabled>
       </InputDisabled>
-      <DropDownComponent data={Data} placeholder='Selecione o endereço' />
+      <DropDownDisabledContainer>
+        <DropDownDisabled
+          setSelected={() =>{}}
+          data={[]}
+          placeholder='Seus endereços'
+          arrowicon={<ArrowIconDisabled source={arrowIcon}/>}
+        />
+      </DropDownDisabledContainer>
       <InputDisabled>
         <PlaceholderDisabled>Senha</PlaceholderDisabled>
       </InputDisabled>
