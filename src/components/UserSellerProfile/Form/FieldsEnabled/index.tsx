@@ -1,7 +1,7 @@
-import { View, Text, Alert } from 'react-native'
+import { Alert } from 'react-native'
 import React, { useState } from 'react'
 import { InputContainer } from '../styled';
-import { AddresText, Input } from './styled';
+import { Input } from './styled';
 import DefaultButton from '../../../common/DefaultButton';
 import DropDownComponent from '../../../common/DropDownComponent';
 
@@ -22,7 +22,7 @@ const FieldsEnabled = () => {
 
             <DropDownComponent
                 data={Data}
-                placeholder='Seus endereços'
+                placeholder="Seus endereços"
                 setSelected={setSelect}
             />
 
@@ -47,11 +47,11 @@ const FieldsEnabled = () => {
                 />
             </InputContainer>
 
-            <AddresText onPress={() => { Alert.alert("texto clicado") }}>Editar Endereços</AddresText>
-
             <DefaultButton
                 buttonText='Salvar Alterações'
-                buttonHandle={() => { Alert.alert('Opções alteradas com sucerro') }}
+                buttonHandle={() => {
+                    Alert.alert('Opções alteradas com sucesso');
+                }}
                 buttonType='primary'
                 marginVertical={10}
             />

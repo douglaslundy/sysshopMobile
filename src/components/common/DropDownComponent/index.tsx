@@ -1,5 +1,5 @@
 import React, { SetStateAction } from 'react'
-import { ArrowIcon, DropDown, DropDownConainer } from './styled';
+import { ArrowIcon, DropDown, DropDownContainer } from './styled';
 
 interface DropDownProps {
     data: Object[];
@@ -14,7 +14,7 @@ const DropDownComponent = ({data, placeholder, setSelected}: DropDownProps) => {
     const checkedData = data?.length <= 0 ? [{value: 'Sem registros no momento!', disabled: true }] : data;
     
     return (
-        <DropDownConainer>
+        <DropDownContainer>
             <DropDown
                 setSelected={setSelected}
                 data={checkedData}
@@ -23,7 +23,7 @@ const DropDownComponent = ({data, placeholder, setSelected}: DropDownProps) => {
                 search={false}
                 arrowicon={<ArrowIcon source={arrowIcon} />}
             />
-        </DropDownConainer>
+        </DropDownContainer>
     )
 }
 

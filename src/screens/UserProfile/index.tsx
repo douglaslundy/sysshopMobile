@@ -1,11 +1,13 @@
 import { Alert } from 'react-native'
 import React from 'react'
-import { Container, DeleteAcc, LogoutBtn, LogoutText } from './styled'
+import { AddressText, Container, DeleteAcc, LogoutBtn, LogoutText } from './styled'
 import NavBar from '../../components/common/NavBar'
 import DefaultTitle from '../../components/common/DefaultTitle'
 import ProfileInfo from '../../components/common/ProfileInfo'
 import Form from '../../components/UserSellerProfile/Form'
 import UserAds from '../../components/UserSellerProfile/UserAds'
+import { useNavigation } from '@react-navigation/native'
+import { PropsStack } from '../../routes'
 
 const Data = [
   {
@@ -35,6 +37,7 @@ const Data = [
 ];
 
 const UserProfile = () => {
+  const navigation = useNavigation<PropsStack>();
 const handleDeleteAcc = () => {
   Alert.alert(
     "Você tem certeza?",
@@ -61,6 +64,13 @@ const handleDeleteAcc = () => {
         <ProfileInfo />
         
         <Form />
+
+        <AddressText
+          onPress={() => {
+           navigation.navigate("AllAddress");
+          }}>
+            Gerenciar endereços
+            </AddressText>
         
         <UserAds products={Data} seller={false} />
 

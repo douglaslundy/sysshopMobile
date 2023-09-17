@@ -33,3 +33,10 @@ export const DeleteAcc = styled.Text`
   color: ${({ theme }) => theme.colors.primaryText};
 `;
 
+export const AddressText = styled.Text`
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: ${({theme}) => theme.colors.primaryText};
+`;
